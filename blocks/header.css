@@ -1,0 +1,20 @@
+.header {
+    background-color: white;
+    height: 46px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.header__logo {
+    margin: 0 auto;
+    height: 26px;
+    width: 94px;
+}
+
+.header__avatar {
+    background-color: #fcf5e5;
+    display: flex;
+    justify-content: flex-start;
+}
