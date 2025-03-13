@@ -13,8 +13,16 @@ Also, we implemented media queries in order to understand how to build a respons
 -HTML
 -CSS
 -Responsive Design
-  
+
+## Improvement goals
+
+I intend on practicing more and hope to be able to get to the point where I can build the project without refering to the video. 
+
 ## Deployment
 
 [(https://jennajohnson523.github.io/se_project_spots/)]  
+
+## Video
+
+[(https://drive.google.com/file/d/1gOZiot1TcMirBFIio6yHIqhwfRDk9RFM/view?usp=share_link)]
   
