@@ -27,6 +27,7 @@
 }
 
 .card__title {
+    max-width: 350px;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.2;
@@ -44,9 +45,13 @@
 
     .card__title {
         font-size: 16px;
+        max-width: 250px;
     }
 
     .card__like-button {
         height: 18px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;   
     }
 }
