@@ -25,7 +25,7 @@
                             <img class="profile__edit-button-icon" src="./images/pencil.svg" alt="picture of pencil"/>Edit Profile
                         </button>
                     </div>
-                        <button type="button" class="profile__add-button">
+                        <button type="button" class="profile__add-button" required>
                             <img class= "profile__add-button-icon" src="./images/add-sign.svg" alt="plus-sign"/>New Post
                         </button>
                 </section>
@@ -36,12 +36,15 @@
                                 <button class="card__delete-button" type="button"></button>
                             <img 
                                 class="card__image" 
-                                src="" 
+                                src="#" 
                                 alt=""
                                 />
                             <div class="card__content">
                                 <h2 class="card__title"></h2>
-                                <button type="button" class="card__like-button"></button>
+                                <button 
+                                aria-label="like card" 
+                                type="button" 
+                                class="card__like-button"></button>
                             </div>
                             </li>
                         </template>
@@ -52,21 +55,26 @@
                 <p class="footer__paragraph">2023 © Spots</p>
             </footer>
             <div class="modal" id="edit-modal">
-                <div class="modal__container">
+                <div class="modal__content">
                     <button 
                         type="button" 
-                        class="modal__button-close">
+                        class="modal__close">
                     </button>
                     <h3 class="modal__title">Edit Profile</h3>
-                    <form class="modal__form" id="edit-profile">
-                        <label for="profile-name-input" class="modal__label">Name
+                    <form class="modal__form" id="edit-profile" nonvalidate>
+                        <label class="modal__label" for="profile-name-input">
+                            Name
                             <input 
                                 id="profile-name-input"  
                                 class="modal__input"
                                 name="name"
                                 placeholder="Type your name"
                                 type="text"
-                                />
+                                minlength="2"
+                                maxlength="40"
+                                required
+                            />
+                            <span class="modal__error profile-name-input-error" id="profile-name-input-error"></span>
                         </label>
                         <label for="profile-description-input" class="modal__label">
                             Description
@@ -76,41 +84,52 @@
                                 name="description"
                                 placeholder="Describe yourself"
                                 type="text" 
-                                />
+                                minlength="2"
+                                maxlength="200"
+                                required
+                            />
+                            <span class="modal__error profile-description-input-error" id="profile-description-input-error"></span>        
                         </label>
-                        <button type="submit" class="modal__submit-button">Save</button>
+                        <button class="modal__submit" type="submit">Save</button>
                     </form>
                 </div>
             </div>
             <div class="modal" id="add-card-modal">
-                <div class="modal__container">
+                <div class="modal__content">
                     <button 
                         type="button" 
-                        class="modal__button-close">
+                        class="modal__close">
                     </button>
                     <h3 class="modal__title">New post</h3>
-                    <form class="modal__form" id="add-card-form">
+                    <form class="modal__form" id="add-card-form" nonvalidate>
                         <label class="modal__label" for="add-card-link-input">
                             Image link
                             <input 
-                            id="add-card-link-input" 
-                            class="modal__input" 
-                            name="link"
-                            placeholder="Paste a link to the picture"
-                            type="url"
+                                id="add-card-link-input" 
+                                class="modal__input" 
+                                name="link"
+                                placeholder="Paste a link to the picture"
+                                type="url"
+                                required
                             />
+                            <span class="modal__error add-card-link-input-error" id="add-card-link-input-error"></span>
+                            
                         </label>
                         <label class="modal__label" for="add-card-name-input">
                             Caption
                             <input 
-                            id="add-card-name-input" 
-                            class="modal__input"
-                            name="name"
-                            placeholder="Type your caption"
-                            type="text"
+                                id="add-card-name-input" 
+                                class="modal__input"
+                                name="name"
+                                placeholder="Type your caption"
+                                type="text"
+                                minlength="2"
+                                maxlength="30"
+                                required
                             />
+                            <span class="modal__error add-card-name-input-error" id="add-card-name-input-error"></span>                          
                         </label>
-                        <button type="submit" class="modal__submit-button">Save</button>
+                        <button type="submit" class="modal__submit">Save</button>
                     </form>
                 </div>
             </div>
@@ -118,7 +137,7 @@
                 <div class="modal__image-container">
                     <button 
                         type="button" 
-                        class="modal__button-close modal__button-close-type-preview">
+                        class="modal__close modal__close-type-preview">
                     </button>
                     <img 
                         src="#" 
@@ -129,6 +148,7 @@
                 </div>
             </div>
         </div>    
+        <script  defer src="./scripts/validation.js"></script>
         <script  defer src="./scripts/index.js"></script>
     </body>
 </html>

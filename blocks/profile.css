@@ -61,7 +61,7 @@
 }
 
 .profile__edit-button:hover {
-    cursor: pointer;
+    cursor: pointer !important;
     opacity: 1;
 }
 .profile__edit-button-icon {
