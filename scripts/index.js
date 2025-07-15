@@ -57,7 +57,7 @@ const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
 const previewCloseBtn = previewModal.querySelector(".modal__close");
 
-function closeWithEscape(evt) {
+function handelEscape(evt) {
   const openedModal = document.querySelector(".modal_is-opened");
   if (evt.key === "Escape") {
     closeModal(openedModal);
@@ -66,12 +66,12 @@ function closeWithEscape(evt) {
 
 function openModal(peanut) {
   peanut.classList.add("modal_is-opened");
-  document.addEventListener("keydown", closeWithEscape);
+  document.addEventListener("keydown", handelEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  document.removeEventListener("keydown", closeWithEscape);
+  document.removeEventListener("keydown", handelEscape);
 }
 
 function handleEditProfileSubmit(evt) {
