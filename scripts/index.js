@@ -57,21 +57,21 @@ const previewImage = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
 const previewCloseBtn = previewModal.querySelector(".modal__close");
 
-function handelEscape(evt) {
-  const openedModal = document.querySelector(".modal_is-opened");
+function handleEscape(evt) {
   if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
     closeModal(openedModal);
   }
 }
 
-function openModal(peanut) {
-  peanut.classList.add("modal_is-opened");
-  document.addEventListener("keydown", handelEscape);
+function openModal(evt) {
+  evt.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  document.removeEventListener("keydown", handelEscape);
+  document.removeEventListener("keydown", handleEscape);
 }
 
 function handleEditProfileSubmit(evt) {
@@ -85,8 +85,6 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   renderCard({ name: cardNameInput.value, link: cardLinkInput.value });
   evt.target.reset();
-  const inputList = Array.from(evt.target.querySelectorAll(".modal__input"));
-  const buttonEl = evt.target.querySelector(".modal__submit");
   disableButton(cardSubmitBtn);
   closeModal(cardModal);
 }
@@ -105,7 +103,6 @@ function getCardElement(data) {
   cardImageEl.alt = data.name;
 
   cardLikeBtn.addEventListener("click", () => {
-    console.log("Like button clicked");
     cardLikeBtn.classList.toggle("card__like-button_liked");
   });
 
@@ -151,6 +148,10 @@ modalList.forEach((modal) => {
 
 cardModalCloseBtn.addEventListener("click", () => {
   closeModal(cardModal);
+});
+
+previewCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
 });
 
 editForm.addEventListener("submit", handleEditProfileSubmit);

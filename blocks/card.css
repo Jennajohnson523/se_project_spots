@@ -6,6 +6,9 @@
   border-radius: 8px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
 .card__like-button {
   padding: 0;
   width: 23px;
