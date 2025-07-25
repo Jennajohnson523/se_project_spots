@@ -1,4 +1,3 @@
-console.log("yes it works");
 const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
