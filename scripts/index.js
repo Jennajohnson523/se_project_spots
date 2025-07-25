@@ -85,7 +85,7 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   renderCard({ name: cardNameInput.value, link: cardLinkInput.value });
   evt.target.reset();
-  disableButton(cardSubmitBtn);
+  disableButton(cardSubmitBtn, settings);
   closeModal(cardModal);
 }
 
@@ -128,7 +128,7 @@ function renderCard(item, method = "prepend") {
 editModalBtn.addEventListener("click", () => {
   nameInput.value = profileNameEl.textContent;
   descriptionInput.value = profileDescriptionEl.textContent;
-  resetValidation(editForm, [nameInput, descriptionInput]);
+  resetValidation(editForm, [nameInput, descriptionInput], settings);
   openModal(editModal);
 });
 
